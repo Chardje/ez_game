@@ -121,14 +121,14 @@ namespace Test2
                 {
                     Console.WriteLine("ERROR");
                 }
-              /*  for (byte i = 0; i < ColMonet; i++)
+                for (byte i = 0; i < ColMonet; i++)
                 {
                     if (cord[0]==MonetkaCord[0,i]&& cord[1] == MonetkaCord[1, i])
                     {
                         BlackListMonet[BlackListMonet.Length] = i;
                         
                     }
-                }*/
+                }
                 Console.Clear();
             }
 
