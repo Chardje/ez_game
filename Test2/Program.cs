@@ -46,16 +46,16 @@ namespace Test2
                             else if (MonetkaCord[0, i] == i0 && MonetkaCord[1, i] == i1)
                             {
 
-                                /*for (byte B =0;B<BlackListMonet.Length;B++)
+                                for (byte B =0;B<BlackListMonet.Length;B++)
                                 {
                                     if (i!=BlackListMonet[B])
-                                    {*/
+                                    {
                                         Console.BackgroundColor = ConsoleColor.DarkYellow;
-                                        /*break;
+                                        break;
                                     }
 
                                 }
-                                */
+                                
                                 break;
 
                             }
