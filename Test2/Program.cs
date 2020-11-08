@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Test2
 {
@@ -26,7 +27,7 @@ namespace Test2
                 MonetkaCord[0, i] = (byte)R.Next(0, maxX - 1);
                 MonetkaCord[1, i] = (byte)R.Next(1, maxY - 1);
             }
-            byte[] BlackListMonet= {200, };
+            List <byte> BlackListMonet=new List<byte>(ColMonet);
             byte[] cord = new byte[2];
             cord[0] = 1;
             cord[1] = 1;
@@ -42,28 +43,33 @@ namespace Test2
                             if (cord[0] == i0 && cord[1] == i1)
                             {
                                 Console.BackgroundColor = ConsoleColor.Blue;
+                                //Console.Write("  ");
+                                
                             }
                             else if (MonetkaCord[0, i] == i0 && MonetkaCord[1, i] == i1)
                             {
-
-                                for (byte B =0;B<BlackListMonet.Length;B++)
+                                if (BlackListMonet.Contains(i))
                                 {
-                                    if (i!=BlackListMonet[B])
-                                    {
-                                        Console.BackgroundColor = ConsoleColor.DarkYellow;
-                                        break;
-                                    }
-
+                                    Console.BackgroundColor = ConsoleColor.Yellow;
+                                    Console.ForegroundColor = ConsoleColor.Yellow;
+                                    //Console.Write("[]");
                                 }
-                                
-                                break;
-
+                                else
+                                {
+                                    Console.BackgroundColor = ConsoleColor.DarkYellow;
+                                    Console.ForegroundColor = ConsoleColor.DarkYellow;
+                                    //Console.Write("[]");
+                                }
+                                //break;
                             }
                             else
                             {
                                 Console.BackgroundColor = ConsoleColor.White;
+                                //Console.Write("  ");
+                                
                             }
                         }
+                        
                             Console.Write("  ");
                         
                     }
@@ -124,9 +130,8 @@ namespace Test2
                 for (byte i = 0; i < ColMonet; i++)
                 {
                     if (cord[0]==MonetkaCord[0,i]&& cord[1] == MonetkaCord[1, i])
-                    {
-                        BlackListMonet[BlackListMonet.Length] = i;
-                        
+                    {                  
+                        BlackListMonet.Add(i);                        
                     }
                 }
                 Console.Clear();
