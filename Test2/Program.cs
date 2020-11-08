@@ -19,14 +19,23 @@ namespace Test2
         static void pole()
         {
             Random R = new Random();
-            const byte maxX = 10;
-            const byte maxY = 10;
-            byte ColMonet = (byte)R.Next(2, 10);
+            const byte maxX = 40;
+            const byte maxY = 30;
+            byte ColMonet = (byte)R.Next(10, 40);
             byte[,] MonetkaCord = new byte[2, ColMonet];
             for (byte i = 0; i < ColMonet; i++)
             {
                 MonetkaCord[0, i] = (byte)R.Next(0, maxX - 1);
-                MonetkaCord[1, i] = (byte)R.Next(1, maxY - 1);
+                MonetkaCord[1, i] = (byte)R.Next(0, maxY - 1);
+                for (byte i2 = 0; i2 < ColMonet; i2++) 
+                {
+                    
+                    if (MonetkaCord[0, i] == MonetkaCord[0, i2]&& MonetkaCord[1, i] == MonetkaCord[1, i2] && i!=i2 )
+                    {                        
+                        i--;
+                        break;
+                    }
+                }                
             }
             List <byte> BlackListMonet=new List<byte>(ColMonet);
             byte[] cord = new byte[2];
