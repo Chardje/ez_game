@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 
 namespace Test2
 {
@@ -32,6 +33,7 @@ namespace Test2
             cord[0] = 1;
             cord[1] = 1;
             byte read;
+            bool a = false;
             while (true)
             {
                 for (byte i0 = 0; i0 < maxY; i0++)
@@ -43,7 +45,7 @@ namespace Test2
                             if (cord[0] == i0 && cord[1] == i1)
                             {
                                 Console.BackgroundColor = ConsoleColor.Blue;
-                                //Console.Write("  ");
+                                //Console.Write("  "); 
                                 
                             }
                             else if (MonetkaCord[0, i] == i0 && MonetkaCord[1, i] == i1)
@@ -52,15 +54,16 @@ namespace Test2
                                 {
                                     Console.BackgroundColor = ConsoleColor.Yellow;
                                     Console.ForegroundColor = ConsoleColor.Yellow;
-                                    //Console.Write("[]");
+                                    Console.Write("[]");
                                 }
                                 else
                                 {
                                     Console.BackgroundColor = ConsoleColor.DarkYellow;
                                     Console.ForegroundColor = ConsoleColor.DarkYellow;
-                                    //Console.Write("[]");
+                                    Console.Write("[]");
                                 }
-                                //break;
+                                a = true;
+                                break;
                             }
                             else
                             {
@@ -69,8 +72,12 @@ namespace Test2
                                 
                             }
                         }
-                        
+                        if (!a)
+                        {
+                            
                             Console.Write("  ");
+                        }
+                        a = false;  
                         
                     }
                     Console.BackgroundColor = ConsoleColor.Black;
