@@ -27,10 +27,10 @@ namespace Test2
             {
                 MonetkaCord[0, i] = (byte)R.Next(0, maxX - 1);
                 MonetkaCord[1, i] = (byte)R.Next(0, maxY - 1);
-                for (byte i2 = 0; i2 < ColMonet; i2++) 
+                for (byte i2 = 0; i2 < i; i2++) 
                 {
                     
-                    if (MonetkaCord[0, i] == MonetkaCord[0, i2]&& MonetkaCord[1, i] == MonetkaCord[1, i2] && i!=i2 )
+                    if (MonetkaCord[0, i] == MonetkaCord[0, i2]&& MonetkaCord[1, i] == MonetkaCord[1, i2])
                     {                        
                         i--;
                         break;
@@ -150,7 +150,8 @@ namespace Test2
                         BlackListMonet.Add(i);                        
                     }
                 }
-                Console.Clear();
+                Console.SetCursorPosition(0, 0);
+                //Console.Clear();
             }
 
         }
